@@ -1,0 +1,7 @@
+platform :ios, '12.0'
+
+target 'Realm Lesson 7' do
+  use_frameworks!
+  pod 'RealmSwift'
+
+end
