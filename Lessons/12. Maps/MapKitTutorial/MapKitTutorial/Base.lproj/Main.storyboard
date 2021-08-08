@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad10_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapKitTutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Pj-Hk-sXL">
+                                <rect key="frame" x="0.0" y="150" width="820" height="1010"/>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="DMe-c6-85Q">
+                                <rect key="frame" x="26" y="0.0" width="768" height="150"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyg-9m-G5b">
+                                        <rect key="frame" x="0.0" y="0.0" width="399" height="150"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OOx-yY-HkQ">
+                                                <rect key="frame" x="125" y="59.5" width="149" height="32"/>
+                                                <segments>
+                                                    <segment title="hybrid"/>
+                                                    <segment title="standard"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="mapTypeSegmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="oZg-EW-qGc"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show trafic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9se-54-yz5">
+                                                <rect key="frame" x="45" y="103" width="86" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1ku-vd-9pp">
+                                                <rect key="frame" x="147" y="98" width="49" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="showTraficSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="tLP-uC-zxB"/>
+                                                </connections>
+                                            </switch>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-tD-0Gh">
+                                                <rect key="frame" x="301" y="103" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="showTableView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UhI-08-MLC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="OOx-yY-HkQ" firstAttribute="centerX" secondItem="oyg-9m-G5b" secondAttribute="centerX" id="RKJ-fb-7lN"/>
+                                            <constraint firstItem="OOx-yY-HkQ" firstAttribute="centerY" secondItem="oyg-9m-G5b" secondAttribute="centerY" id="agC-QI-vAa"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88Y-hZ-Ozx">
+                                        <rect key="frame" x="440" y="0.0" width="328" height="150"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Покажи золотые ворота"/>
+                                        <connections>
+                                            <action selector="showGoldenGateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YnT-Og-OGD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7NQ-kl-wTh">
+                                <rect key="frame" x="1000" y="382" width="451" height="538"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="538" id="LBx-1U-fpT"/>
+                                    <constraint firstAttribute="width" constant="451" id="Mka-aB-KZa"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DMe-c6-85Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="0Dd-4j-9WK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Pj-Hk-sXL" secondAttribute="bottom" id="56e-3R-tF1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7NQ-kl-wTh" secondAttribute="bottom" constant="240" id="7IA-5J-vh2"/>
+                            <constraint firstItem="7Pj-Hk-sXL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="7fL-L3-nSN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DMe-c6-85Q" secondAttribute="trailing" constant="26" id="Bl8-zi-7Go"/>
+                            <constraint firstItem="7Pj-Hk-sXL" firstAttribute="top" secondItem="DMe-c6-85Q" secondAttribute="bottom" id="TwP-Gg-tHB"/>
+                            <constraint firstItem="7NQ-kl-wTh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="1000" id="bkD-8L-YMj"/>
+                            <constraint firstItem="DMe-c6-85Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jf0-tn-MSA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Pj-Hk-sXL" secondAttribute="trailing" id="vE1-3K-aFP"/>
+                            <constraint firstItem="7Pj-Hk-sXL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vJ5-qI-DAz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="7Pj-Hk-sXL" id="cvc-Lw-GVH"/>
+                        <outlet property="tableViewLeftContraint" destination="bkD-8L-YMj" id="lzA-Xl-xLF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-43.170731707317074" y="-37.118644067796609"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
