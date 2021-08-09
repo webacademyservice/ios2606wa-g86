@@ -17,7 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Pj-Hk-sXL">
-                                <rect key="frame" x="0.0" y="150" width="820" height="1010"/>
+                                <rect key="frame" x="0.0" y="150" width="820" height="860"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Slz-2c-a1m"/>
+                                </connections>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="DMe-c6-85Q">
                                 <rect key="frame" x="26" y="0.0" width="768" height="150"/>
@@ -82,18 +85,28 @@
                                     <constraint firstAttribute="width" constant="451" id="Mka-aB-KZa"/>
                                 </constraints>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8SI-ov-NFC" customClass="CustomView" customModule="MapKitTutorial" customModuleProvider="target">
+                                <rect key="frame" x="290" y="1018" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="UG5-M6-Xz7"/>
+                                    <constraint firstAttribute="height" constant="128" id="bH8-OJ-7Cw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DMe-c6-85Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="0Dd-4j-9WK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Pj-Hk-sXL" secondAttribute="bottom" id="56e-3R-tF1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Pj-Hk-sXL" secondAttribute="bottom" constant="150" id="56e-3R-tF1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7NQ-kl-wTh" secondAttribute="bottom" constant="240" id="7IA-5J-vh2"/>
                             <constraint firstItem="7Pj-Hk-sXL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="7fL-L3-nSN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DMe-c6-85Q" secondAttribute="trailing" constant="26" id="Bl8-zi-7Go"/>
                             <constraint firstItem="7Pj-Hk-sXL" firstAttribute="top" secondItem="DMe-c6-85Q" secondAttribute="bottom" id="TwP-Gg-tHB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8SI-ov-NFC" secondAttribute="bottom" constant="14" id="acF-KP-Bhj"/>
                             <constraint firstItem="7NQ-kl-wTh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="1000" id="bkD-8L-YMj"/>
                             <constraint firstItem="DMe-c6-85Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jf0-tn-MSA"/>
+                            <constraint firstItem="8SI-ov-NFC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l9y-zx-rRJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Pj-Hk-sXL" secondAttribute="trailing" id="vE1-3K-aFP"/>
                             <constraint firstItem="7Pj-Hk-sXL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vJ5-qI-DAz"/>
                         </constraints>

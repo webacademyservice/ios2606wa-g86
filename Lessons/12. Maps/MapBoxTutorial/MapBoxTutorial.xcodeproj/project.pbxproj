@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11CB07BA26BFDB8B00E9BAA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB07B926BFDB8B00E9BAA6 /* AppDelegate.swift */; };
+		11CB07BC26BFDB8B00E9BAA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB07BB26BFDB8B00E9BAA6 /* SceneDelegate.swift */; };
+		11CB07BE26BFDB8B00E9BAA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB07BD26BFDB8B00E9BAA6 /* ViewController.swift */; };
+		11CB07C126BFDB8B00E9BAA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CB07BF26BFDB8B00E9BAA6 /* Main.storyboard */; };
+		11CB07C326BFDB8D00E9BAA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11CB07C226BFDB8D00E9BAA6 /* Assets.xcassets */; };
+		11CB07C626BFDB8D00E9BAA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CB07C426BFDB8D00E9BAA6 /* LaunchScreen.storyboard */; };
+		11CB07CE26BFDBB700E9BAA6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 11CB07CD26BFDBB700E9BAA6 /* Podfile */; };
+		8D2A94638A14774F8449CD01 /* Pods_MapBoxTutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4521A37CCC8315E8CDD381 /* Pods_MapBoxTutorial.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E868F4EAF9F0B7E775A37F3 /* Pods-MapBoxTutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapBoxTutorial.debug.xcconfig"; path = "Target Support Files/Pods-MapBoxTutorial/Pods-MapBoxTutorial.debug.xcconfig"; sourceTree = "<group>"; };
+		11CB07B626BFDB8B00E9BAA6 /* MapBoxTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapBoxTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11CB07B926BFDB8B00E9BAA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11CB07BB26BFDB8B00E9BAA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		11CB07BD26BFDB8B00E9BAA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11CB07C026BFDB8B00E9BAA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11CB07C226BFDB8D00E9BAA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11CB07C526BFDB8D00E9BAA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11CB07C726BFDB8D00E9BAA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11CB07CD26BFDBB700E9BAA6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		9A4521A37CCC8315E8CDD381 /* Pods_MapBoxTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapBoxTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A359F36DCDEAB08FD2760198 /* Pods-MapBoxTutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapBoxTutorial.release.xcconfig"; path = "Target Support Files/Pods-MapBoxTutorial/Pods-MapBoxTutorial.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11CB07B326BFDB8B00E9BAA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D2A94638A14774F8449CD01 /* Pods_MapBoxTutorial.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11CB07AD26BFDB8B00E9BAA6 = {
+			isa = PBXGroup;
+			children = (
+				11CB07B826BFDB8B00E9BAA6 /* MapBoxTutorial */,
+				11CB07B726BFDB8B00E9BAA6 /* Products */,
+				FFA43B69C9F795A387005270 /* Pods */,
+				E209F7D55157327530D1E66E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		11CB07B726BFDB8B00E9BAA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11CB07B626BFDB8B00E9BAA6 /* MapBoxTutorial.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11CB07B826BFDB8B00E9BAA6 /* MapBoxTutorial */ = {
+			isa = PBXGroup;
+			children = (
+				11CB07CD26BFDBB700E9BAA6 /* Podfile */,
+				11CB07B926BFDB8B00E9BAA6 /* AppDelegate.swift */,
+				11CB07BB26BFDB8B00E9BAA6 /* SceneDelegate.swift */,
+				11CB07BD26BFDB8B00E9BAA6 /* ViewController.swift */,
+				11CB07BF26BFDB8B00E9BAA6 /* Main.storyboard */,
+				11CB07C226BFDB8D00E9BAA6 /* Assets.xcassets */,
+				11CB07C426BFDB8D00E9BAA6 /* LaunchScreen.storyboard */,
+				11CB07C726BFDB8D00E9BAA6 /* Info.plist */,
+			);
+			path = MapBoxTutorial;
+			sourceTree = "<group>";
+		};
+		E209F7D55157327530D1E66E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A4521A37CCC8315E8CDD381 /* Pods_MapBoxTutorial.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFA43B69C9F795A387005270 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E868F4EAF9F0B7E775A37F3 /* Pods-MapBoxTutorial.debug.xcconfig */,
+				A359F36DCDEAB08FD2760198 /* Pods-MapBoxTutorial.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11CB07B526BFDB8B00E9BAA6 /* MapBoxTutorial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11CB07CA26BFDB8D00E9BAA6 /* Build configuration list for PBXNativeTarget "MapBoxTutorial" */;
+			buildPhases = (
+				C712EC25DAB9233CB0DAFBEE /* [CP] Check Pods Manifest.lock */,
+				11CB07B226BFDB8B00E9BAA6 /* Sources */,
+				11CB07B326BFDB8B00E9BAA6 /* Frameworks */,
+				11CB07B426BFDB8B00E9BAA6 /* Resources */,
+				09254D3A0ADB2AA47F22C9A8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MapBoxTutorial;
+			productName = MapBoxTutorial;
+			productReference = 11CB07B626BFDB8B00E9BAA6 /* MapBoxTutorial.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11CB07AE26BFDB8B00E9BAA6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					11CB07B526BFDB8B00E9BAA6 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = 11CB07B126BFDB8B00E9BAA6 /* Build configuration list for PBXProject "MapBoxTutorial" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11CB07AD26BFDB8B00E9BAA6;
+			productRefGroup = 11CB07B726BFDB8B00E9BAA6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11CB07B526BFDB8B00E9BAA6 /* MapBoxTutorial */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11CB07B426BFDB8B00E9BAA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11CB07C626BFDB8D00E9BAA6 /* LaunchScreen.storyboard in Resources */,
+				11CB07C326BFDB8D00E9BAA6 /* Assets.xcassets in Resources */,
+				11CB07CE26BFDBB700E9BAA6 /* Podfile in Resources */,
+				11CB07C126BFDB8B00E9BAA6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09254D3A0ADB2AA47F22C9A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MapBoxTutorial/Pods-MapBoxTutorial-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MapBoxTutorial/Pods-MapBoxTutorial-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MapBoxTutorial/Pods-MapBoxTutorial-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C712EC25DAB9233CB0DAFBEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MapBoxTutorial-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11CB07B226BFDB8B00E9BAA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11CB07BE26BFDB8B00E9BAA6 /* ViewController.swift in Sources */,
+				11CB07BA26BFDB8B00E9BAA6 /* AppDelegate.swift in Sources */,
+				11CB07BC26BFDB8B00E9BAA6 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		11CB07BF26BFDB8B00E9BAA6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11CB07C026BFDB8B00E9BAA6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11CB07C426BFDB8D00E9BAA6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11CB07C526BFDB8D00E9BAA6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11CB07C826BFDB8D00E9BAA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		11CB07C926BFDB8D00E9BAA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11CB07CB26BFDB8D00E9BAA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E868F4EAF9F0B7E775A37F3 /* Pods-MapBoxTutorial.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5LHF76Y88Y;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_$(EFFECTIVE_PLATFORM_SUFFIX)__NATIVE_ARCH_64_BIT_$(NATIVE_ARCH_64_BIT)__XCODE_$(XCODE_VERSION_MAJOR)) arm64";
+				INFOPLIST_FILE = MapBoxTutorial/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = alexdneprin.MapBoxTutorial;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11CB07CC26BFDB8D00E9BAA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A359F36DCDEAB08FD2760198 /* Pods-MapBoxTutorial.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5LHF76Y88Y;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_$(EFFECTIVE_PLATFORM_SUFFIX)__NATIVE_ARCH_64_BIT_$(NATIVE_ARCH_64_BIT)__XCODE_$(XCODE_VERSION_MAJOR)) arm64";
+				INFOPLIST_FILE = MapBoxTutorial/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = alexdneprin.MapBoxTutorial;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11CB07B126BFDB8B00E9BAA6 /* Build configuration list for PBXProject "MapBoxTutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11CB07C826BFDB8D00E9BAA6 /* Debug */,
+				11CB07C926BFDB8D00E9BAA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11CB07CA26BFDB8D00E9BAA6 /* Build configuration list for PBXNativeTarget "MapBoxTutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11CB07CB26BFDB8D00E9BAA6 /* Debug */,
+				11CB07CC26BFDB8D00E9BAA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11CB07AE26BFDB8B00E9BAA6 /* Project object */;
+}

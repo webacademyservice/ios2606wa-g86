@@ -13,6 +13,8 @@
 		1190BA3726BE88D900B23784 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1190BA3526BE88D900B23784 /* Main.storyboard */; };
 		1190BA3926BE88DA00B23784 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1190BA3826BE88DA00B23784 /* Assets.xcassets */; };
 		1190BA3C26BE88DA00B23784 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1190BA3A26BE88DA00B23784 /* LaunchScreen.storyboard */; };
+		11CB076626BFC89900E9BAA6 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB076526BFC89900E9BAA6 /* CustomView.swift */; };
+		11CB076826BFC8BD00E9BAA6 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11CB076726BFC8BD00E9BAA6 /* CustomView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		1190BA3826BE88DA00B23784 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1190BA3B26BE88DA00B23784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1190BA3D26BE88DA00B23784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11CB076526BFC89900E9BAA6 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		11CB076726BFC8BD00E9BAA6 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		1190BA2E26BE88D900B23784 /* MapKitTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				11CB076426BFC86000E9BAA6 /* CustomView */,
 				1190BA2F26BE88D900B23784 /* AppDelegate.swift */,
 				1190BA3126BE88D900B23784 /* SceneDelegate.swift */,
 				1190BA3326BE88D900B23784 /* ViewController.swift */,
@@ -65,6 +70,15 @@
 				1190BA3D26BE88DA00B23784 /* Info.plist */,
 			);
 			path = MapKitTutorial;
+			sourceTree = "<group>";
+		};
+		11CB076426BFC86000E9BAA6 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				11CB076526BFC89900E9BAA6 /* CustomView.swift */,
+				11CB076726BFC8BD00E9BAA6 /* CustomView.xib */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1190BA3C26BE88DA00B23784 /* LaunchScreen.storyboard in Resources */,
+				11CB076826BFC8BD00E9BAA6 /* CustomView.xib in Resources */,
 				1190BA3926BE88DA00B23784 /* Assets.xcassets in Resources */,
 				1190BA3726BE88D900B23784 /* Main.storyboard in Resources */,
 			);
@@ -138,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1190BA3426BE88D900B23784 /* ViewController.swift in Sources */,
+				11CB076626BFC89900E9BAA6 /* CustomView.swift in Sources */,
 				1190BA3026BE88D900B23784 /* AppDelegate.swift in Sources */,
 				1190BA3226BE88D900B23784 /* SceneDelegate.swift in Sources */,
 			);
