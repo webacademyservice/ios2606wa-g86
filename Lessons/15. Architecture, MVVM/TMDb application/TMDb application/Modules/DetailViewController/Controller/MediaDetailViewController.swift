@@ -11,33 +11,7 @@ import RealmSwift
 import youtube_ios_player_helper
 import Alamofire
 
-struct NetworkManager {
-    
-    static let shared = NetworkManager()
-    
-    func loadData(completion: @escaping((String) -> ())) {
-        completion("asdasd")
-    }
-}
-
-protocol NetworkManagerWithDelegateDelegate: AnyObject {
-    func passData(_ data: String)
-}
-
-struct NetworkManagerWithDelegate {
-    
-    weak var delegate: NetworkManagerWithDelegateDelegate?
-    
-    func loadData() {
-        self.delegate?.passData("asdgdffgdfg")
-    }
-}
-
-class MediaDetailViewController: UIViewController, NetworkManagerWithDelegateDelegate {
-    
-    func passData(_ data: String) {
-        print(data)
-    }
+class MediaDetailViewController: UIViewController {
     
     // Создаем объект реалм
     let realm = try? Realm()
@@ -53,24 +27,10 @@ class MediaDetailViewController: UIViewController, NetworkManagerWithDelegateDel
     /// Часть URL для загрузки картинок. URL для загрузки любой картинки начинается с этой строки.
     let baseImageURL = "https://image.tmdb.org/t/p/original/"
 
-    var networkManager = NetworkManager.shared
-
     //MARK: - Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.networkManager.loadData(completion: { data in
-            //
-            print(data)
-            
-        })
-        
-        
-        var netw = NetworkManagerWithDelegate()
-        netw.delegate = self
-        netw.loadData()
-        
         
         // Метод вызвался сразу при открытии контроллера. Мы указываем значения текста для detailLabel
         self.detailLabel.text = self.movie?.overview
