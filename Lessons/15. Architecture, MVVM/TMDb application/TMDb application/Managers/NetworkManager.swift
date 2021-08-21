@@ -8,80 +8,53 @@
 import Foundation
 import Alamofire
 
-
-struct NetworkManager: NetworkManagerProtocol {
-    
-    func loadListOfData() {
-        //
-    }
+struct NetworkManager {
     
     static let shared = NetworkManager()
     
-    /// Метод запрашивает фильмы и обновляет таблицу после получения ответа.
     func requestTrendingMovies(completion: @escaping(([Movie]) -> ())) {
         
-        let url = "https://api.themoviedb.org/3/trending/movie/week?api_key=96cfbe0ba15c4721bca8030e8e32becb"
+        let url = Constants.network.defaultPath + "trending/movie/week?api_key=" + Constants.network.apiKey
 
-        // Выполним запрос по URL который мы создали выше:
         AF.request(url).responseJSON { responce in
 
-            // Переменная responce имеет тип JSON, приводим ее к типу PopularMovieResult
             let decoder = JSONDecoder()
 
             if let data = try? decoder.decode(PopularMovieResult.self, from: responce.data!) {
 
-                // Если получилось привести, сохраняем в локальную переменную movies список фильмов, который мы получили из интернета:
                 let movies = data.movies ?? []
                 completion(movies)
             }
         }
     }
     
-    /// Метод запрашивает фильмы и обновляет таблицу после получения ответа.
     func requestTrendingActors(completion: @escaping(([Actor]) -> ())) {
         
-        let url = "https://api.themoviedb.org/3/person/popular?api_key=96cfbe0ba15c4721bca8030e8e32becb&language=en-US&page=1"
+        let url = Constants.network.defaultPath + "person/popular?api_key=" + Constants.network.apiKey
 
-        // Выполним запрос по URL который мы создали выше:
         AF.request(url).responseJSON { responce in
 
-            // Переменная responce имеет тип JSON, приводим ее к типу PopularMovieResult
             let decoder = JSONDecoder()
 
             if let data = try? decoder.decode(PopularActorsResult.self, from: responce.data!) {
-
-                // Если получилось привести, сохраняем в локальную переменную movies список фильмов, который мы получили из интернета:
                 let actors = data.actors ?? []
                 completion(actors)
             }
         }
     }
-}
-
-
-// Test examples:
-
-protocol NetworkManagerADelegate: AnyObject {
-    func dataLoaded(data: String)
-}
-
-struct NetworkManagerA {
     
-    weak var delegate: NetworkManagerADelegate?
-    
-    func performRequest() {
+    func loadMovieVideoKey(_ movieId: String, completion: @escaping((String) -> ())) {
         
-        let resonce = "Some data from NetworkManagerA"
-        self.delegate?.dataLoaded(data: resonce)
-    }
-}
+        let url = Constants.network.defaultPath + "movie/\(movieId)/videos?api_key=" + Constants.network.apiKey
+        
+        AF.request(url).responseJSON { response in
 
-struct NetworkManagerB {
-    
-    static let shared = NetworkManagerB()
+            let decoder = JSONDecoder()
 
-    func performRequest(url: String, comletion: @escaping((String) -> ())) {
-        let responce = "Some data from NetworkManagerB"
-        comletion(responce)
+            if let data = try? decoder.decode(MovieVideosResult.self, from: response.data!) {
+                let videoKey =  data.videos?.first?.key ?? ""
+                completion(videoKey)
+            }
+        }
     }
 }

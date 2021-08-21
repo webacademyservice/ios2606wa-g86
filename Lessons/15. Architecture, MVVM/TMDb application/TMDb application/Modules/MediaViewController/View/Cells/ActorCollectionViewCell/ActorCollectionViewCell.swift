@@ -25,7 +25,7 @@ class ActorCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        self.cellImageView.layer.cornerRadius = self.cellImageView.frame.height / 2
+        self.cellImageView.layer.cornerRadius = 16
     }
     
     // MARK: - Public
@@ -39,7 +39,7 @@ class ActorCollectionViewCell: UICollectionViewCell {
     // MARK: - Private
     
     private func setupCell() {
-        self.cellImageView.contentMode = .scaleAspectFit
+        self.cellImageView.contentMode = .scaleAspectFill
     }
     
     private func loadImage(profilePath: String?) {
@@ -48,7 +48,7 @@ class ActorCollectionViewCell: UICollectionViewCell {
             os_log("RrofilePath is nil")
             return
         }
-        let imageURL = URL(string: "https://image.tmdb.org/t/p/original" + profilePath)
+        let imageURL = URL(string: Constants.network.defaultImagePath + profilePath)
         self.cellImageView.sd_setImage(with: imageURL, completed: nil)
     }
 }

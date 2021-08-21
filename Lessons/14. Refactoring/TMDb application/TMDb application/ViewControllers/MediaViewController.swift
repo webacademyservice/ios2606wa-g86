@@ -42,8 +42,7 @@ class MediaViewController: UIViewController, NetworkManagerADelegate {
         
         let actorCollectionViewCellIdentifier = String(describing: ActorCollectionViewCell.self)
         
-        // Регистрируем ячейку для UITableView, по идентификатору Cell. Если вы создаете свою (кастомную) ячейку, вы должны указать ее класс вместо UITableViewCell
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.UI.defaultCellIdentifier)
         self.collectionView.register(UINib(nibName: actorCollectionViewCellIdentifier, bundle: nil),
                                      forCellWithReuseIdentifier: actorCollectionViewCellIdentifier)
         self.title = Constants.viewControllerTitles.media

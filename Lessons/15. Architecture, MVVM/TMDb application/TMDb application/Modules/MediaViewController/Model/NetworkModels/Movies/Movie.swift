@@ -2,18 +2,18 @@ import Foundation
 
 struct Movie: Codable {
 
-	let adult: Bool?
+	var adult: Bool?
 	let backdropPath: String?
 	let id: Int?
-	let genreIds: [Int]?
-	let originalLanguage: String?
-	let originalTitle: String?
+    var genreIds: [Int]?
+    var originalLanguage: String?
+    var originalTitle: String?
 	let posterPath: String?
-	let video: Bool?
-	let voteAverage: Double?
+    var video: Bool?
+    var voteAverage: Double?
 	let overview: String?
-	let releaseDate: String?
-	let voteCount: Int?
+    var releaseDate: String?
+    var voteCount: Int?
 	let title: String?
 	let popularity: Double?
 	let mediaType: String?
@@ -55,5 +55,16 @@ struct Movie: Codable {
 		popularity = try values.decodeIfPresent(Double.self, forKey: .popularity)
         mediaType = try values.decodeIfPresent(String.self, forKey: .mediaType)
 	}
+    
+    public init(from movieRealm: MovieRealm) {
 
+        self.title = movieRealm.title
+        self.popularity = movieRealm.popularity
+        self.overview = movieRealm.overview
+        self.id = movieRealm.id
+        self.backdropPath = movieRealm.backdropPath
+        self.mediaType = movieRealm.mediaType
+        self.posterPath = movieRealm.posterPath
+        
+    }
 }

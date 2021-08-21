@@ -6,42 +6,23 @@
 //
 
 import UIKit
+import os
 
-class MediaViewController: UIViewController {//, NetworkManagerADelegate {
-    
-//    func dataLoaded(data: String) {
-//        print(data)
-//    }
+class MediaViewController: UIViewController {
 
-    // Перетянули UITableView из Main.storyboard в код, чтобы можно было работать с ней
+    // MARK: IBOutlets
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var viewModel: MediaViewModel = MediaViewModel()
 
+    // MARK: UIViewController life circle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Test examples
         
-        var networkManagerA = NetworkManagerA()
-//        networkManagerA.delegate = self
-        networkManagerA.performRequest()
-    
-        NetworkManagerB.shared.performRequest(url: "") { responce in
-            print(responce)
-        }
-        
-        //---------------
-        
-        let actorCollectionViewCellIdentifier = String(describing: ActorCollectionViewCell.self)
-        
-        // Регистрируем ячейку для UITableView, по идентификатору Cell. Если вы создаете свою (кастомную) ячейку, вы должны указать ее класс вместо UITableViewCell
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        self.collectionView.register(UINib(nibName: actorCollectionViewCellIdentifier, bundle: nil),
-                                     forCellWithReuseIdentifier: actorCollectionViewCellIdentifier)
-        self.title = Constants.viewControllerTitles.media
-        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,54 +34,79 @@ class MediaViewController: UIViewController {//, NetworkManagerADelegate {
         self.viewModel.loadActors(completion: {
             self.collectionView.reloadData()
         })
+        
+        // Navigation Bar Setup
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        self.navigationController?.navigationBar.barTintColor = .white
+    }
+    
+    // MARK: - Private
+    
+    private func setupUI() {
+        
+        self.title = Constants.viewControllerTitles.media
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        
+        // Register cells
+        let actorCollectionViewCellIdentifier = String(describing: ActorCollectionViewCell.self)
+        let mediaTableViewCellIdentifier = String(describing: MediaTableViewCell.self)
+        
+        self.collectionView.register(UINib(nibName: actorCollectionViewCellIdentifier, bundle: nil),
+                                     forCellWithReuseIdentifier: actorCollectionViewCellIdentifier)
+        self.tableView.register(UINib(nibName: mediaTableViewCellIdentifier, bundle: nil),
+                                forCellReuseIdentifier: mediaTableViewCellIdentifier)
+        
+        // Remove line under UINavigationBar
+        self.navigationController?.addCustomBottomLine(color: UIColor.clear, height: 0)
+        
+        // Add Content Inset to UITableView
+        self.tableView.contentInset.top = 156
 
     }
 }
 
 extension MediaViewController: UITableViewDataSource {
 
-    /// Метод должен возвращать количество ячеек в таблице
-    /// - Parameters:
-    ///   - tableView: Наша таблица (UITableView)
-    ///   - section: Числовое значение, намер секции для которого мы возвращаем количество ячеек. Этот параметр нужен чтобы мы могли добавить условие, если секция 0, вернуть N ячеек, если секция 1, вернуть X ячеек и т д. Мы пока работаем только с 1 секцией, так что нам этот параметр не важен.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.movies.count
     }
 
-    /// Создаем ячейку для нашей таблицы и возвращаем ее
-    /// - Parameters:
-    ///   - tableView: Наша таблица (UITableView)
-    ///   - indexPath: Индекс  ячейки которую мы создаем. Имеет параметр .section и .row, мы используем .row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        // Достаем зарегистрированную ячейку по идентификатору Cell, если такой нет, возвращаем экземпляр UITableViewCell
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") else {
+        let cellIdentifier = String(describing: MediaTableViewCell.self)
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? MediaTableViewCell else {
+            os_log("Can not create \(cellIdentifier)")
             return UITableViewCell()
         }
-
-        // Указываем текст который будет отображаться в ячейке - он храниться в проперти title у объекта Movie. Но сначала, чтобы обратиться к объекту Movie, достаем его из массива, обращаясь к нему по индексу [indexPath.row]
-        cell.textLabel?.text = self.viewModel.movies[indexPath.row].title
+        
+        let media = self.viewModel.movies[indexPath.row]
+        let imagePathString = "https://image.tmdb.org/t/p/original/" + media.posterPath!
+        cell.configureWith(imageURL: URL(string: imagePathString),
+                           title: media.title,
+                           releaseDate: media.releaseDate,
+                           overviewText: media.overview)
         return cell
     }
 }
 
 extension MediaViewController: UITableViewDelegate {
 
-    /// Метод срабатывает по нажатию на ячейку tableView
-    /// - Parameters:
-    ///   - tableView: Наша таблица (UITableView)
-    ///   - indexPath: Индекс выбранной ячейки. Имеет параметр .section и .row, мы используем .row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let identifier = String(describing: MediaDetailViewController.self)
+        let controllerIdentifier = String(describing: MediaDetailViewController.self)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let detailViewController = storyboard.instantiateViewController(identifier: identifier) as? MediaDetailViewController {
-            
-            detailViewController.movie = self.viewModel.movies[indexPath.row]
-            
+        if let detailViewController = storyboard.instantiateViewController(identifier: controllerIdentifier)
+            as? MediaDetailViewController {
+            detailViewController.viewModel.movie = self.viewModel.movies[indexPath.row]
             self.navigationController?.pushViewController(detailViewController, animated: true)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
@@ -113,14 +119,16 @@ extension MediaViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        let cellIdentifier = String(describing: ActorCollectionViewCell.self)
+        
         let currentActor = self.viewModel.actors[indexPath.row]
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActorCollectionViewCell", for: indexPath) as? ActorCollectionViewCell {
-            cell.configureWith(actorName: currentActor.name,
-                               profilePath: currentActor.profile_path)
-            return cell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier,
+                                                            for: indexPath) as? ActorCollectionViewCell else {
+            os_log("Can not create \(cellIdentifier)")
+            return UICollectionViewCell()
         }
-    
-        return UICollectionViewCell()
+        cell.configureWith(actorName: currentActor.name, profilePath: currentActor.profile_path)
+        return cell
     }
 }
 
