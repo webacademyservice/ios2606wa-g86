@@ -15,6 +15,8 @@ struct DataManager {
 
     static let shared = DataManager()
 
+    private init() { }
+    
     func saveMovie(_ movie: Movie, completion: @escaping(() -> ())) {
         
         let movieRealm = MovieRealm()
@@ -44,7 +46,7 @@ struct DataManager {
         completion(convertToMoviesList(moviesRealm: moviesRealm))
     }
     
-    func convertToMoviesList(moviesRealm: [MovieRealm]) -> [Movie] {
+    private func convertToMoviesList(moviesRealm: [MovieRealm]) -> [Movie] {
 
         var movies = [Movie]()
         for movieRealm in moviesRealm {

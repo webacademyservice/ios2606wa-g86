@@ -62,7 +62,6 @@ class MediaViewController: UIViewController {
         
         // Add Content Inset to UITableView
         self.tableView.contentInset.top = 156
-
     }
 }
 
@@ -82,7 +81,7 @@ extension MediaViewController: UITableViewDataSource {
         }
         
         let media = self.viewModel.movies[indexPath.row]
-        let imagePathString = "https://image.tmdb.org/t/p/original/" + media.posterPath!
+        let imagePathString = Constants.network.defaultImagePath + media.posterPath!
         cell.configureWith(imageURL: URL(string: imagePathString),
                            title: media.title,
                            releaseDate: media.releaseDate,

@@ -17,18 +17,15 @@ struct Constants {
 
         static let defaultImagePath = "https://image.tmdb.org/t/p/original/"
         static let defaultPath = "https://api.themoviedb.org/3/"
-
     }
     
     struct viewControllerTitles {
-        
         static let media = "Media"
         static let watchLater = "Watch later"
     }
     
-    struct UI {
+    struct ui {
         static let defaultCellIdentifier = "Cell"
-        
         static let movieSavedMessage = "Movie saved!"
         static let okMessage = "Cool 👌"
     }

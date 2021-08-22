@@ -11,6 +11,8 @@ import Alamofire
 struct NetworkManager {
     
     static let shared = NetworkManager()
+
+    private init() { }
     
     func requestTrendingMovies(completion: @escaping(([Movie]) -> ())) {
         

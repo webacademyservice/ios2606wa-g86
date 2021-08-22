@@ -16,7 +16,7 @@ class WatchLaterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.UI.defaultCellIdentifier)
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.ui.defaultCellIdentifier)
         self.title = Constants.viewControllerTitles.watchLater
     }
     
@@ -40,7 +40,7 @@ extension WatchLaterViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.UI.defaultCellIdentifier)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ui.defaultCellIdentifier)
         cell?.textLabel?.text = self.viewModel.movies[indexPath.row].title
         return cell ?? UITableViewCell()
     }

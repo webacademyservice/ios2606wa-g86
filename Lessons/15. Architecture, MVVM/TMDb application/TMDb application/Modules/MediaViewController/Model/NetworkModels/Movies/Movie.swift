@@ -55,9 +55,8 @@ struct Movie: Codable {
 		popularity = try values.decodeIfPresent(Double.self, forKey: .popularity)
         mediaType = try values.decodeIfPresent(String.self, forKey: .mediaType)
 	}
-    
-    public init(from movieRealm: MovieRealm) {
 
+    init(from movieRealm: MovieRealm) {
         self.title = movieRealm.title
         self.popularity = movieRealm.popularity
         self.overview = movieRealm.overview
@@ -65,6 +64,5 @@ struct Movie: Codable {
         self.backdropPath = movieRealm.backdropPath
         self.mediaType = movieRealm.mediaType
         self.posterPath = movieRealm.posterPath
-        
     }
 }

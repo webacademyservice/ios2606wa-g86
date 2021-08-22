@@ -236,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				1161FCE926C916D3006C5141 /* Model */,
-				1161FCE826C916CC006C5141 /* Controller */,
+				1161FCE826C916CC006C5141 /* View */,
 				1161FCE726C916C7006C5141 /* ViewModel */,
 			);
 			path = DetailViewController;
@@ -250,12 +250,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		1161FCE826C916CC006C5141 /* Controller */ = {
+		1161FCE826C916CC006C5141 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				D353585526AEDC1B00E19D3B /* MediaDetailViewController.swift */,
 			);
-			path = Controller;
+			path = View;
 			sourceTree = "<group>";
 		};
 		1161FCE926C916D3006C5141 /* Model */ = {
